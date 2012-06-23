@@ -1,0 +1,1 @@
+This map uses tiles with trasnparencys to allow a GIF in the background to show through. The result is something that looks like a moving ocean.
