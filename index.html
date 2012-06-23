@@ -1,0 +1,60 @@
+
+<html>
+<head>
+  <title>GIF Map</title>
+  <meta charset="UTF-8" />
+
+  <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.css" />
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.ie.css" />
+  <![endif]-->
+  <script src="http://code.leafletjs.com/leaflet-0.3.1/leaflet.js"></script>
+    <style type="text/css">
+      #map {
+        width: 100%;
+        height: 100%;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        position: absolute;
+      }
+
+      body {
+         margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+      }
+
+      .leaflet-container {
+        background-image:url('water.gif');
+
+      }
+
+    </style>
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <script>
+
+var map = new L.Map('map',{
+        maxZoom:4,
+        minZoom:0,
+        scheme:'tms'
+        
+    });
+
+    var mapurl = 'http://visuallybs.com/maps/tiles/trans/1.0.0/balloon/{z}/{x}/{y}.png',
+      mapattribute = '',
+      mapname = new L.TileLayer(mapurl, {maxZoom: 4, attribution: mapattribute, scheme: 'tms'});
+      map.setView(new L.LatLng(40.7717, -73.9782) , 2).addLayer(mapname);
+
+
+        var tilejson = {
+            tiles: ['http://visuallybs.com/maps/tiles/trans/1.0.0/balloon/']}
+
+
+ 
+  </script>
+
+</body>
+</html>
